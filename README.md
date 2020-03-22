@@ -33,11 +33,11 @@ The collected profiles are stored in the json file ```profiles_list.json```.
 ###Text-based Network
 The distance of the companies is defined by the [Jaro-winkler distance](https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance) of their profiles.
 Then, transfer the distance to truncated similarity values ( truncated by 0.25 in example ).
-![example_W_similarity](https://github.com/songyesog2000/A-Text-Based-Network/example_W_similarity.png)
+![example_W_similarity](https://github.com/songyesog2000/A-Text-Based-Network/blob/master/exampe_W_similarty.png)
 Based on the similarity, a network graph is composed and stored in ```G.html```.
 
 
-All the above process is integrated by running
+All the above process is integrated by running in terminal
 ```bash
 python Text-based\ Network.py
 ```
