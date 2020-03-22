@@ -38,7 +38,7 @@ if __name__ == '__main__':
     for _ in tics:
         W[_][_]=0.0
 
-
     G.show("G.html")
+    print('done')
 
 

@@ -1,15 +1,14 @@
-import stringdist
-import response
+import argparse
 from urllib.request import urlopen
 from bs4 import BeautifulSoup as bs
-import matplotlib.pyplot as plt
-import numpy as np
 import nltk
 import re
 import json
 
-
-
+nltk.download('stopwords')
+parser = argparse.ArgumentParser(description='')
+parser.add_argument('--tickers',  type=str)
+args = parser.parse_args()
 
 def read_profile(tic=None):
     if type(tic) is str:
@@ -36,17 +35,19 @@ def read_profile(tic=None):
 
 
 if __name__ == '__main__':
+    if args.tickers is not None:
+        tics = args.tickers.split(',')
+    else:
+        tics = ['JPM', 'BAC', 'GOOG', 'AAPL', 'MMM', 'AAC', 'T', 'VZ', 'XOM', 'CVX', 'KO', 'BUD']
 
-    nltk.download('stopwords')
 
-    tics = ['JPM', 'BAC', 'GOOG', 'AAPL', 'MMM', 'AAC', 'T', 'VZ', 'XOM', 'CVX', 'KO', 'BUD']
     # use dictionary type to store profile_list
     profile_list = {}
     for tic in tics:
         try:
             profile_list.update({tic:read_profile(tic=tic)})
         except:
-            print(tic,'may not be a ticket')
+            print(tic,'may not be a ticker symbol')
 
     #save as a jason
     json = json.dumps(profile_list)

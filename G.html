@@ -48,7 +48,7 @@
 
         // parsing and collecting nodes and edges from the python
         nodes = new vis.DataSet([{"font": {"color": "white"}, "id": "JPM", "label": "JPM", "shape": "dot"}, {"font": {"color": "white"}, "id": "BAC", "label": "BAC", "shape": "dot"}, {"font": {"color": "white"}, "id": "GOOG", "label": "GOOG", "shape": "dot"}, {"font": {"color": "white"}, "id": "AAPL", "label": "AAPL", "shape": "dot"}, {"font": {"color": "white"}, "id": "MMM", "label": "MMM", "shape": "dot"}, {"font": {"color": "white"}, "id": "T", "label": "T", "shape": "dot"}, {"font": {"color": "white"}, "id": "VZ", "label": "VZ", "shape": "dot"}, {"font": {"color": "white"}, "id": "XOM", "label": "XOM", "shape": "dot"}, {"font": {"color": "white"}, "id": "CVX", "label": "CVX", "shape": "dot"}, {"font": {"color": "white"}, "id": "KO", "label": "KO", "shape": "dot"}, {"font": {"color": "white"}, "id": "BUD", "label": "BUD", "shape": "dot"}]);
-        edges = new vis.DataSet([]);
+        edges = new vis.DataSet([{"from": "JPM", "to": "BAC", "weight": 7.263056539245365}, {"from": "JPM", "to": "MMM", "weight": 5.452649639053886}, {"from": "JPM", "to": "T", "weight": 6.994691240242613}, {"from": "JPM", "to": "VZ", "weight": 6.693519008403913}, {"from": "BAC", "to": "MMM", "weight": 5.491684165569278}, {"from": "BAC", "to": "T", "weight": 6.362230009262549}, {"from": "BAC", "to": "VZ", "weight": 5.922422300830124}, {"from": "GOOG", "to": "XOM", "weight": 4.967709533970657}, {"from": "GOOG", "to": "BUD", "weight": 5.358156445054369}, {"from": "AAPL", "to": "MMM", "weight": 5.574015690725532}, {"from": "MMM", "to": "T", "weight": 5.92380101145205}, {"from": "MMM", "to": "CVX", "weight": 4.840259432423512}, {"from": "T", "to": "VZ", "weight": 6.129935295655915}, {"from": "XOM", "to": "BUD", "weight": 5.701368236941827}, {"from": "CVX", "to": "KO", "weight": 5.696433387866933}]);
 
         // adding nodes and edges to the graph
         data = {nodes: nodes, edges: edges};
@@ -72,6 +72,14 @@
         "hideNodesOnDrag": false
     },
     "physics": {
+        "barnesHut": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.3,
+            "damping": 0.09,
+            "gravitationalConstant": -80000,
+            "springConstant": 0.001,
+            "springLength": 250
+        },
         "enabled": true,
         "stabilization": {
             "enabled": true,
