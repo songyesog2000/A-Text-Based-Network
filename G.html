@@ -9,9 +9,9 @@
 <style type="text/css">
 
         #mynetwork {
-            width: 100%;
-            height: 750px;
-            background-color: #222222;
+            width: 500px;
+            height: 500px;
+            background-color: #ffffff;
             border: 1px solid lightgray;
             position: relative;
             float: left;
@@ -19,6 +19,12 @@
 
         
 
+        
+        #config {
+            float: left;
+            width: 400px;
+            height: 600px;
+        }
         
 
         
@@ -29,6 +35,8 @@
 <body>
 <div id = "mynetwork"></div>
 
+
+<div id = "config"></div>
 
 <script type="text/javascript">
 
@@ -47,22 +55,22 @@
         
 
         // parsing and collecting nodes and edges from the python
-        nodes = new vis.DataSet([{"font": {"color": "white"}, "id": "JPM", "label": "JPM", "shape": "dot"}, {"font": {"color": "white"}, "id": "BAC", "label": "BAC", "shape": "dot"}, {"font": {"color": "white"}, "id": "GOOG", "label": "GOOG", "shape": "dot"}, {"font": {"color": "white"}, "id": "AAPL", "label": "AAPL", "shape": "dot"}, {"font": {"color": "white"}, "id": "MMM", "label": "MMM", "shape": "dot"}, {"font": {"color": "white"}, "id": "T", "label": "T", "shape": "dot"}, {"font": {"color": "white"}, "id": "VZ", "label": "VZ", "shape": "dot"}, {"font": {"color": "white"}, "id": "XOM", "label": "XOM", "shape": "dot"}, {"font": {"color": "white"}, "id": "CVX", "label": "CVX", "shape": "dot"}, {"font": {"color": "white"}, "id": "KO", "label": "KO", "shape": "dot"}, {"font": {"color": "white"}, "id": "BUD", "label": "BUD", "shape": "dot"}]);
-        edges = new vis.DataSet([{"from": "JPM", "to": "BAC", "weight": 7.263056539245365}, {"from": "JPM", "to": "MMM", "weight": 5.452649639053886}, {"from": "JPM", "to": "T", "weight": 6.994691240242613}, {"from": "JPM", "to": "VZ", "weight": 6.693519008403913}, {"from": "BAC", "to": "MMM", "weight": 5.491684165569278}, {"from": "BAC", "to": "T", "weight": 6.362230009262549}, {"from": "BAC", "to": "VZ", "weight": 5.922422300830124}, {"from": "GOOG", "to": "XOM", "weight": 4.967709533970657}, {"from": "GOOG", "to": "BUD", "weight": 5.358156445054369}, {"from": "AAPL", "to": "MMM", "weight": 5.574015690725532}, {"from": "MMM", "to": "T", "weight": 5.92380101145205}, {"from": "MMM", "to": "CVX", "weight": 4.840259432423512}, {"from": "T", "to": "VZ", "weight": 6.129935295655915}, {"from": "XOM", "to": "BUD", "weight": 5.701368236941827}, {"from": "CVX", "to": "KO", "weight": 5.696433387866933}]);
+        nodes = new vis.DataSet([{"color": "#ff0000", "id": "JPM", "label": "JPM", "shape": "dot"}, {"color": "#f23000", "id": "BAC", "label": "BAC", "shape": "dot"}, {"color": "#e65c00", "id": "GOOG", "label": "GOOG", "shape": "dot"}, {"color": "#d98200", "id": "AAPL", "label": "AAPL", "shape": "dot"}, {"color": "#cca300", "id": "MMM", "label": "MMM", "shape": "dot"}, {"color": "#bfbf00", "id": "T", "label": "T", "shape": "dot"}, {"color": "#8fb300", "id": "VZ", "label": "VZ", "shape": "dot"}, {"color": "#64a600", "id": "XOM", "label": "XOM", "shape": "dot"}, {"color": "#3d9900", "id": "CVX", "label": "CVX", "shape": "dot"}, {"color": "#1c8d00", "id": "KO", "label": "KO", "shape": "dot"}, {"color": "#008000", "id": "BUD", "label": "BUD", "shape": "dot"}]);
+        edges = new vis.DataSet([{"from": "JPM", "to": "BAC", "value": 7.263056539245365}, {"from": "JPM", "to": "MMM", "value": 5.452649639053886}, {"from": "JPM", "to": "T", "value": 6.994691240242613}, {"from": "JPM", "to": "VZ", "value": 6.693519008403913}, {"from": "BAC", "to": "MMM", "value": 5.491684165569278}, {"from": "BAC", "to": "T", "value": 6.362230009262549}, {"from": "BAC", "to": "VZ", "value": 5.922422300830124}, {"from": "GOOG", "to": "XOM", "value": 4.967709533970657}, {"from": "GOOG", "to": "BUD", "value": 5.358156445054369}, {"from": "AAPL", "to": "MMM", "value": 5.574015690725532}, {"from": "MMM", "to": "T", "value": 5.92380101145205}, {"from": "MMM", "to": "CVX", "value": 4.840259432423512}, {"from": "T", "to": "VZ", "value": 6.129935295655915}, {"from": "XOM", "to": "BUD", "value": 5.701368236941827}, {"from": "CVX", "to": "KO", "value": 5.696433387866933}]);
 
         // adding nodes and edges to the graph
         data = {nodes: nodes, edges: edges};
 
         var options = {
     "configure": {
-        "enabled": false
+        "enabled": true
     },
     "edges": {
         "color": {
             "inherit": true
         },
         "smooth": {
-            "enabled": false,
+            "enabled": true,
             "type": "continuous"
         }
     },
@@ -72,14 +80,6 @@
         "hideNodesOnDrag": false
     },
     "physics": {
-        "barnesHut": {
-            "avoidOverlap": 0,
-            "centralGravity": 0.3,
-            "damping": 0.09,
-            "gravitationalConstant": -80000,
-            "springConstant": 0.001,
-            "springLength": 250
-        },
         "enabled": true,
         "stabilization": {
             "enabled": true,
@@ -93,6 +93,10 @@
         
         
 
+        
+        // if this network requires displaying the configure window,
+        // put it in its div
+        options.configure["container"] = document.getElementById("config");
         
 
         network = new vis.Network(container, data, options);

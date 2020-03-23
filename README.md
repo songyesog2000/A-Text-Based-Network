@@ -1,20 +1,20 @@
 # A-Text-Based-Network
-This repo is a Python cover of the R-project, A Text-Based Network, by Majeed Simaan. The original one refers to Rpubs: https://rpubs.com/simaan84/410145
+This repo is a Python cover of the R-project, A Text-Based Network, by Majeed Simaan. The original R project refers to Rpubs: https://rpubs.com/simaan84/410145
 
 ### Summary
 * [Basics](#Basics)
-* [Company Profiles](#Company Profiles)
-* [Text-based Network](#Text-based Network)
+* [Company Profiles](#Company-Profiles)
+* [Text-based Network](#Text-based-Network)
 
 ### Basics
 This program is recommend to run with
--Python version 3.X.
--BeautifulSoup4
--nltk
--pyvis
--numpy
--textdistance
--pandas
+- Python version 3.X.
+- BeautifulSoup4
+- nltk
+- pyvis
+- numpy
+- textdistance
+- pandas
 
 Install by downloading the file from the github page, or using git code
 Install via GitHub:
@@ -34,10 +34,10 @@ The collected profiles are stored in the json file ```profiles_list.json```.
 The distance of the companies is defined by the [Jaro-winkler distance](https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance) of their profiles.
 Then, transfer the distance to truncated similarity values ( truncated by 0.25 in example ).
 ![example_W_similarity](https://github.com/songyesog2000/A-Text-Based-Network/blob/master/exampe_W_similarty.png)
-Based on the similarity, a network graph is composed and stored in ```G.html```.
+Based on the similarity, a network graph is composed and stored in ```G.html```, the html file will show up the visualization in browsers.
+![network graph](https://github.com/songyesog2000/A-Text-Based-Network/blob/master/network graph.png)
 
-
-All the above process is integrated by running in terminal
+All the above process is integrated by running
 ```bash
 python Text-based\ Network.py
 ```
