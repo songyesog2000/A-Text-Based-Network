@@ -35,7 +35,7 @@ The distance of the companies is defined by the [Jaro-winkler distance](https://
 Then, transfer the distance to truncated similarity values ( truncated by 0.25 in example ).
 ![example_W_similarity](https://github.com/songyesog2000/A-Text-Based-Network/blob/master/exampe_W_similarty.png)
 Based on the similarity, a network graph is composed and stored in ```G.html```, the html file will show up the visualization in browsers.
-![network graph](https://github.com/songyesog2000/A-Text-Based-Network/blob/master/network graph.png)
+![network graph](https://github.com/songyesog2000/A-Text-Based-Network/blob/master/network%20graph.png)
 
 All the above process is integrated by running
 ```bash
